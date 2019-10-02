@@ -1,4 +1,4 @@
-# go-tei [![GoDoc](https://godoc.org/github.com/hankei6km/go-tei?status.svg)](https://godoc.org/github.com/hankei6km/go-tei) [![Built with Mage](https://magefile.org/badge.svg)](https://github.com/hankei6km/go-tei) [![Build Status](https://travis-ci.org/hankei6km/go-tei.svg?branch=master)](https://travis-ci.org/hankei6km/go-tei)
+# go-tei [![GoDoc](https://godoc.org/github.com/hankei6km/go-tei?status.svg)](https://godoc.org/github.com/hankei6km/go-tei) [![Built with Mage](https://magefile.org/badge.svg)](https://magefile.org) [![Build Status](https://travis-ci.org/hankei6km/go-tei.svg?branch=master)](https://travis-ci.org/hankei6km/go-tei)
 
 tei switch the piped input to another one if no data from the piped input, and simply use to just check no data from the piped input.
 
