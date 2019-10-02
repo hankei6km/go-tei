@@ -1,8 +1,8 @@
-# go-tei
+# go-tei  [![Build Status](https://travis-ci.org/hankei6km/go-tei.svg?branch=master)](https://travis-ci.org/hankei6km/go-tei)
 
 tei switch the piped input to another one if no data from the piped input, and simply use to just check no data from the piped input.
 
-```console
+```
 $ echo " = >" | tei string "NO DATA" | figlet -f banner
             #    
              #   
