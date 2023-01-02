@@ -12,10 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        # go-version: ["1.14", "1.15", "1.16.x"]
-        # とりあえず除外
-        # https://github.com/actions/setup-go/issues/304
-        go-version: ["1.15", "1.16.x"]
+        go-version: ["oldstable", "stable"]
 
     steps:
       - uses: actions/checkout@v3
@@ -25,9 +22,11 @@ jobs:
           go-version: ${{ matrix.go-version }}
           cache: true
 
-      - name: Install dependencies
+      - name: Install mage
         run: |
-          go get github.com/magefile/mage
+          mkdir mkdir -p /tmp/mage && cd /tmp/mage
+          curl -sL https://api.github.com/repos/magefile/mage/releases/latest | jq .assets[].browser_download_url | grep _Linux-64bit.tar.gz | xargs -I '{}' curl -sL '{}' | tar -zxf -
+          cp mage "/usr/local/bin/mage"
 
       - name: Test with mage
         run: mage test
