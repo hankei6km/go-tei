@@ -25,8 +25,10 @@ jobs:
       - name: Install mage
         run: |
           mkdir mkdir -p /tmp/mage && cd /tmp/mage
-          curl -sL https://api.github.com/repos/magefile/mage/releases/latest | jq .assets[].browser_download_url | grep _Linux-64bit.tar.gz | xargs -I '{}' curl -sL '{}' | tar -zxf -
+          gh api repos/magefile/mage/releases/latest --jq '.assets[].browser_download_url' | grep _Linux-64bit.tar.gz | xargs -I '{}' curl -sL '{}' | tar -zxf -
           cp mage "/usr/local/bin/mage"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Test with mage
         run: mage test
