@@ -1,3 +1,4 @@
+//go:build mage
 // +build mage
 
 package main
@@ -33,7 +34,7 @@ var pkgs = []string{".", filepath.Join(mainDir, "cli"), filepath.Join(mainDir, "
 
 func Snapshot() error {
 	fmt.Println("Building...")
-	cmd := exec.Command("goreleaser", "--snapshot", "--skip-publish", "--rm-dist")
+	cmd := exec.Command("goreleaser", "--snapshot", "--skip-publish", "--rm-dist", "-p", "1")
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 	if err := cmd.Start(); err != nil {
