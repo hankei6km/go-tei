@@ -3,7 +3,7 @@ module github.com/hankei6km/go-tei
 go 1.13
 
 require (
-	github.com/hankei6km/go-ac v0.1.2
+	github.com/hankei6km/go-ac v0.1.3
 	github.com/magefile/mage v1.14.0
 	github.com/pkg/errors v0.9.1
 	github.com/spf13/cobra v1.6.1
